@@ -14,7 +14,7 @@ public class IPLDao1 {
 
 	private String url = "jdbc:mysql://localhost:3306/ipl_db";
 	private String username = "root";
-	private String password = "Harsh123@";
+	private String password = "password";
 	
 	private PreparedStatement ps = null;
 	private Connection conn = null;
