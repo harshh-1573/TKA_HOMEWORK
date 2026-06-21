@@ -1,0 +1,247 @@
+/* ============================================================
+   contact.css — Contact Section Styles (#contact)
+   ============================================================ */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .contact-left {
+    grid-column: span 5;
+  }
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .contact-right {
+    grid-column: span 7;
+  }
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 24, 39, 0.45);
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.contact-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-card-icon.blue {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--primary-blue);
+}
+
+.contact-card-icon.purple {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--secondary-purple);
+}
+
+.contact-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(249, 250, 251, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.contact-card-value {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.contact-card-value a:hover {
+  color: var(--primary-blue);
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 24, 39, 0.4);
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(249, 250, 251, 0.6);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.875rem 1rem;
+  font-size: 14px;
+  color: white;
+  font-family: var(--font-inter);
+  outline: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(249, 250, 251, 0.25);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-textarea {
+  resize: none;
+}
+
+.btn-submit {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-inter);
+}
+
+.btn-submit:hover {
+  opacity: 0.95;
+  transform: scale(1.01);
+}
+
+.btn-submit:active {
+  transform: scale(0.99);
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-submit .spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+/* Form Success */
+#form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+#form-success.show {
+  display: flex;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.success-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  font-family: var(--font-outfit);
+}
+
+.success-text {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: rgba(249, 250, 251, 0.6);
+  max-width: 24rem;
+}

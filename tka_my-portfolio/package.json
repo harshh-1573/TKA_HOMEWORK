@@ -1,0 +1,12 @@
+{
+  "name": "tka-my-portfolio",
+  "version": "1.0.0",
+  "description": "Modular Harsh Gorantiwar Developer Portfolio",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "author": "Harsh Gorantiwar",
+  "license": "ISC"
+}

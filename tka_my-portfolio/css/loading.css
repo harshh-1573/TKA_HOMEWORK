@@ -1,0 +1,93 @@
+/* ============================================================
+   loading.css — Loading Screen Styles
+   ============================================================ */
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.loading-spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--primary-blue);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.loading-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 800;
+  font-size: 1.25rem;
+  font-family: var(--font-outfit);
+  z-index: 2;
+}
+
+.loading-name {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-light);
+}
+
+.loading-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  color: var(--text-light);
+}
+
+.loading-bar {
+  width: 160px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-purple));
+  height: 100%;
+  width: 0%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.loading-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
